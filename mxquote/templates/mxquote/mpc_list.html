@@ -1,0 +1,21 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <h1>MPC List</h1>
+
+    {% if mpc_list %}
+    <ul>
+
+      {% for mpc in mpc_list %}
+      <li>
+        {{ mpc.modelo }}
+        <p>  Capacidad: {{mpc.capacidad}} Gbps </p>
+        <p>  Precio: {{mpc.precio}}€ </p>
+      </li>
+      {% endfor %}
+
+    </ul>
+    {% else %}
+      <p>There are no MPCs in the library.</p>
+    {% endif %}       
+{% endblock %}

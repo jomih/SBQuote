@@ -1,0 +1,21 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <h1>SCB List</h1>
+
+    {% if scb_list %}
+    <ul>
+
+      {% for scb in scb_list %}
+      <li>
+        {{ scb.modelo }}
+        <p>  Capacidad: {{scb.capacidad}} Gbps </p>
+        <p>  Precio: {{scb.precio}}€ </p>
+      </li>
+      {% endfor %}
+
+    </ul>
+    {% else %}
+      <p>There are no SCBs in the library.</p>
+    {% endif %}
+{% endblock %}

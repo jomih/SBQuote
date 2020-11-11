@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<head>
+  <title>Connect and bind</title>
+</head>
+<body>
+  <h1>how to connect</h1>
+  <h2>using python</h2>
+  </hr>
+  <select>
+    <option disabled="true" selected>-- Select name --</option>
+    {% for results in showmpc %}
+    <option>{{results.modelo}}</option>
+    {% endfor %}
+  </select>
+</body>

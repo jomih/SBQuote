@@ -1,0 +1,20 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <h1>RE List</h1>
+
+    {% if re_list %}
+    <ul>
+
+      {% for re in re_list %}
+      <li>
+        {{ re.modelo }}
+        <p>  Precio: {{re.precio}}€ </p>
+      </li>
+      {% endfor %}
+
+    </ul>
+    {% else %}
+      <p>There are no REs in the library.</p>
+    {% endif %}
+{% endblock %}

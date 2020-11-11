@@ -1,0 +1,17 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<h1>Cotizacion Sleeping-Beauty</h1>
+
+  <p>Welcome to <em>Make-my-life-Easier</em>, a very basic Django website developed to make quotes for SB.</p>
+
+<h2>Dynamic content</h2>
+
+  <p>Que quieres hacer?</p>
+  <ul>
+          <li><a href="{% url 'quotemxh' %}">Cotizar MX480/960</a></li>
+          <li><a href="{% url 'quotemxl' %}">Cotizar MX104</a></li>
+          <li><a href="{% url 'quotempc' %}">Cotizar MPCs</a></li>
+  </ul>
+
+{% endblock %}
