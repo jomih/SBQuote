@@ -3,17 +3,7 @@
 {% block content %}
 <h1>Make-my-life-Easier</h1>
 
-<h2>MX480 quotation</h2>
-  <!--
-  <script type="text/javascript">
-    function get_scb0()
-    {
-      inputscb0=document.querySelector("#selectscb0")
-      ans=inputscb0.options[inputscb0.selectedIndex].value;
-      document.querySelector("#scb0").textContent=ans
-    }
-  </script>
-  -->
+<h2>MPCs and MICs quotation</h2>
 
 <form method="POST" action= "{% url 'make_quote' %}">
 {% csrf_token %}

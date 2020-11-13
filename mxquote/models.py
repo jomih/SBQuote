@@ -95,3 +95,9 @@ class showscb(models.Model):
 
 class showre(models.Model):
     re=models.CharField(max_length=100)
+
+class showmic(models.Model):
+    mic=models.CharField(max_length=100)
+
+class showlicense(models.Model):
+    mic=models.CharField(max_length=100)

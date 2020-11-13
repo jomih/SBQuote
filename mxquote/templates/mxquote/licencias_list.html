@@ -1,0 +1,20 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <h1>Licencias List</h1>
+
+    {% if license_list %}
+    <ul>
+
+      {% for license in license_list %}
+      <li>
+        {{ license.modelo }}
+        <p>  Precio: {{license.precio}}€ </p>
+      </li>
+      {% endfor %}
+
+    </ul>
+    {% else %}
+      <p>There are no Licenses in the library.</p>
+    {% endif %}
+{% endblock %}

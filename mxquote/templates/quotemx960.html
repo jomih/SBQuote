@@ -3,17 +3,7 @@
 {% block content %}
 <h1>Make-my-life-Easier</h1>
 
-<h2>MX480 quotation</h2>
-  <!--
-  <script type="text/javascript">
-    function get_scb0()
-    {
-      inputscb0=document.querySelector("#selectscb0")
-      ans=inputscb0.options[inputscb0.selectedIndex].value;
-      document.querySelector("#scb0").textContent=ans
-    }
-  </script>
-  -->
+<h2>MX960 quotation</h2>
 
 <form method="POST" action= "{% url 'make_quote' %}">
 {% csrf_token %}
@@ -23,10 +13,11 @@
   <p>Chasis :
     <td><select name='selectchasis'>
       <option disabled="true" selected>-- Select Chassis --</option>
-      <option chasis_value=MX480-PREMIUM3-DC>MX480-PREMIUM3-DC</option>
+      <option chasis_value=MX960-PREMIUM3-DC>MX960-PREMIUM3-DC</option>
     </select>
   </p>
   <table style="width:100%">
+
   <tr>
   <p><td>SCB0 :</td>
     <td><select name='selectscb0'>
@@ -38,6 +29,7 @@
   </p>
   <td></td>
   </tr>
+
   <tr>
   <p><td>SCB1 :</td>
     <td><select name='selectscb1'>
@@ -49,6 +41,19 @@
   </p>
   <td></td>
   </tr>
+
+  <tr>
+  <p><td>SCB2 :</td>
+    <td><select name='selectscb2'>
+      <option disabled="true" selected>-- Select SCB --</option>
+      {% for results_scb in showscb %}
+      <option scb1_value={{results_scb.modelo}}>{{results_scb.modelo}}</option>
+      {% endfor %}
+    </select></td>
+  </p>
+  <td></td>
+  </tr>
+
   <tr>
   <p><td>RE0  :</td>
     <td><select name="selectre0">
@@ -255,16 +260,156 @@
     </select></td>
   </tr>
 
-  <!--
-  <input type="submit" value="click" onclick="get_scb0()"/>
-  -->
-  <!--
-  <input type="submit" value="click" action="{% url 'result_quote' %}" method="POST">
-  <b id="scb0"></b>
-  -->
-  <!--
-  <button type="submit" value="Click" onclick="location.href='{% url 'result_quote' %}'" name='mybtn2'>Da Click</button>
-  -->
+  <tr>
+  <p><td>Slot7  :</td>
+    <td><select name="selectslot7">
+      <option disabled="true" selected>-- Select MPC --</option>
+      {% for results_mpc in showmpc %}
+      <option>{{results_mpc.modelo}}</option>
+    {% endfor %}
+    </select></td>
+  </p>
+  </tr>
+
+  <tr>
+  <td style="text-align:center">MIC0:</td>
+    <td><select name="selectslot7mic0">
+      <option disabled="true" selected>-- Select MIC --</option>
+      {% for results_mic in showmic %}
+      <option>{{results_mic.modelo}}</option>
+      {% endfor %}
+    </select></td>
+  </tr>
+  <tr>
+  <td style="text-align:center">MIC1:</td>
+    <td><select name="selectslot7mic1">
+      <option disabled="true" selected>-- Select MIC --</option>
+      {% for results_mic in showmic %}
+      <option>{{results_mic.modelo}}</option>
+      {% endfor %}
+    </select></td>
+  </tr>
+
+  <tr>
+  <p><td>Slot8  :</td>
+    <td><select name="selectslot8">
+      <option disabled="true" selected>-- Select MPC --</option>
+      {% for results_mpc in showmpc %}
+      <option>{{results_mpc.modelo}}</option>
+    {% endfor %}
+    </select></td>
+  </p>
+  </tr>
+
+  <tr>
+  <td style="text-align:center">MIC0:</td>
+    <td><select name="selectslot8mic0">
+      <option disabled="true" selected>-- Select MIC --</option>
+      {% for results_mic in showmic %}
+      <option>{{results_mic.modelo}}</option>
+      {% endfor %}
+    </select></td>
+  </tr>
+  <tr>
+  <td style="text-align:center">MIC1:</td>
+    <td><select name="selectslot8mic1">
+      <option disabled="true" selected>-- Select MIC --</option>
+      {% for results_mic in showmic %}
+      <option>{{results_mic.modelo}}</option>
+      {% endfor %}
+    </select></td>
+  </tr>
+
+  <tr>
+  <p><td>Slot9  :</td>
+    <td><select name="selectslot9">
+      <option disabled="true" selected>-- Select MPC --</option>
+      {% for results_mpc in showmpc %}
+      <option>{{results_mpc.modelo}}</option>
+    {% endfor %}
+    </select></td>
+  </p>
+  </tr>
+
+  <tr>
+  <td style="text-align:center">MIC0:</td>
+    <td><select name="selectslot9mic0">
+      <option disabled="true" selected>-- Select MIC --</option>
+      {% for results_mic in showmic %}
+      <option>{{results_mic.modelo}}</option>
+      {% endfor %}
+    </select></td>
+  </tr>
+  <tr>
+  <td style="text-align:center">MIC1:</td>
+    <td><select name="selectslot9mic1">
+      <option disabled="true" selected>-- Select MIC --</option>
+      {% for results_mic in showmic %}
+      <option>{{results_mic.modelo}}</option>
+      {% endfor %}
+    </select></td>
+  </tr>
+
+  <tr>
+  <p><td>Slot10  :</td>
+    <td><select name="selectslot10">
+      <option disabled="true" selected>-- Select MPC --</option>
+      {% for results_mpc in showmpc %}
+      <option>{{results_mpc.modelo}}</option>
+    {% endfor %}
+    </select></td>
+  </p>
+  </tr>
+
+  <tr>
+  <td style="text-align:center">MIC0:</td>
+    <td><select name="selectslot10mic0">
+      <option disabled="true" selected>-- Select MIC --</option>
+      {% for results_mic in showmic %}
+      <option>{{results_mic.modelo}}</option>
+      {% endfor %}
+    </select></td>
+  </tr>
+  <tr>
+  <td style="text-align:center">MIC1:</td>
+    <td><select name="selectslot10mic1">
+      <option disabled="true" selected>-- Select MIC --</option>
+      {% for results_mic in showmic %}
+      <option>{{results_mic.modelo}}</option>
+      {% endfor %}
+    </select></td>
+  </tr>
+
+  <tr>
+  <p><td>Slot11  :</td>
+    <td><select name="selectslot11">
+      <option disabled="true" selected>-- Select MPC --</option>
+      {% for results_mpc in showmpc %}
+      <option>{{results_mpc.modelo}}</option>
+    {% endfor %}
+    </select></td>
+  </p>
+  </tr>
+
+  <tr>
+  <td style="text-align:center">MIC0:</td>
+    <td><select name="selectslot11mic0">
+      <option disabled="true" selected>-- Select MIC --</option>
+      {% for results_mic in showmic %}
+      <option>{{results_mic.modelo}}</option>
+      {% endfor %}
+    </select></td>
+  </tr>
+  <tr>
+  <td style="text-align:center">MIC1:</td>
+    <td><select name="selectslot11mic1">
+      <option disabled="true" selected>-- Select MIC --</option>
+      {% for results_mic in showmic %}
+      <option>{{results_mic.modelo}}</option>
+      {% endfor %}
+    </select></td>
+  </tr>
+
   <tr>
   <td><input type="submit" name="Submit"/></td>
   </tr>

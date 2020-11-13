@@ -1,0 +1,21 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <h1>MIC List</h1>
+
+    {% if mic_list %}
+    <ul>
+
+      {% for mic in mic_list %}
+      <li>
+        {{ mic.modelo }}
+        <p>  Zocalos: {{mic.zocalos}}</p>
+        <p>  Precio: {{mic.precio}}€ </p>
+      </li>
+      {% endfor %}
+
+    </ul>
+    {% else %}
+      <p>There are no MICs in the library.</p>
+    {% endif %}
+{% endblock %}
